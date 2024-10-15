@@ -61,9 +61,9 @@ Date of finished: 14.10.2024
 
 10) Так как ключи показывает не стоит, так как это не для публичного доступа информация, то на рисунках ниже показан конфиг сервера и конфиг клиента. На рисунке показаны настройки порта, протокола, сертификата.
 
-  ![VirtualBox_Danochka_14_10_2024_22_28_17](https://github.com/user-attachments/assets/26ced234-1fe1-41ac-b45f-a1fbd76461ff)
+    ![VirtualBox_Danochka_14_10_2024_22_28_17](https://github.com/user-attachments/assets/26ced234-1fe1-41ac-b45f-a1fbd76461ff)
 
-  ![VirtualBox_Danochka_14_10_2024_23_31_13](https://github.com/user-attachments/assets/60ba93e0-6afb-4f66-8b40-97b9dee6f778)
+    ![VirtualBox_Danochka_14_10_2024_23_31_13](https://github.com/user-attachments/assets/60ba93e0-6afb-4f66-8b40-97b9dee6f778)
 
 11) Для завершении лабораторной работы необходимо пропинговать. Результаты представлены ниже. У сервера адрес 10.8.0.1, у клиента 10.8.0.2 (Если бы у нас был бы еще один клиент, то у него было бы 10.8.0.3).
 
