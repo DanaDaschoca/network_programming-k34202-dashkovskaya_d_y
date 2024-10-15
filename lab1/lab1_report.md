@@ -14,7 +14,7 @@ Lab: Lab1
 
 Date of create: 1.10.2024
 
-Date of finished: 14.10.2024
+Date of finished: 15.10.2024
 
 # Лабораторная работа №1 "Установка CHR и Ansible, настройка VPN"
 ## Описание
