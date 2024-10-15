@@ -1,16 +1,20 @@
-# University: ITMO University
+University: [ITMO University](https://itmo.ru/ru/)
 
-# Faculty: FICT
+Faculty: [FICT](https://fict.itmo.ru)
 
-# Course: Network programming
+Course: [Network programming](https://github.com/itmo-ict-faculty/network-programming)
 
-# Year: 2024/2025
+Year: 2024/2025
 
-# Group: K34202
+Group: K34202
 
-# Author: Dashkovskaya Dana
+Author: Dashkovskaya Dana Yuryevna
 
-# Lab: Lab1
+Lab: Lab1
+
+Date of create: 1.10.2024
+
+Date of finished: 14.10.2024
 
 # Лабораторная работа №1 "Установка CHR и Ansible, настройка VPN"
 ## Описание
