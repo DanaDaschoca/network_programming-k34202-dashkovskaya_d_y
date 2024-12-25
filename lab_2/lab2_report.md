@@ -48,14 +48,70 @@ Date of finished: 26.10.2024
    * ansible_ssh_private_key_file=~/.ssh/id_rsa путь к приватному ключу сервера, который используется при ssh подключении
 
 ```yaml
-
+---
+routers:
+  hosts:
+    router1:
+      ansible_host: 10.0.0.2
+    router2:
+      ansible_host: 10.0.0.3
+      
+  vars:
+    ansible_connection: ansible.netcommon.network_cli
+    ansible_network_os: community.routeros.routeros
+    ansible_user: admin
+    ansible_ssh_private_key_file: ~/.ssh/id_rsa
 ```
 
 7) Теперь создадим плейбук, который будет выполнять следующие задачи сразу на двух CHR: настройка пароля, NTP (Network Time Protocol) и OSPF (Open Shortest Path First), сбор данных по OSPF топологии и полных конфигов устройств. Для этого создадим файл [main_playbook.yaml](./ansible-project/main_playbook.yaml) и пропишем в нем эти задачи (tasks) с использованием модуля community.routeros.command для удаленного выполнения команд на устройствах MikroTik RouterOS.
 
 ```yaml
+---
+- name: Setting MikroTik
+  hosts: routers
+  gather_facts: false
+  tasks:
+    - name: Change password
+      community.routeros.command:
+        commands:
+          - /user set admin password="4321"
+    - name: Setting NTP
+      community.routeros.command:
+        commands:
+          - /system ntp client set enabled=yes mode=unicast
+          - /system ntp client servers add address=194.190.168.1
 
+    - name: Setting OSPF
+      community.routeros.command:
+        commands:
+          - /interface bridge add name=lo
+          - /ip address add address={{ router_id }} interface=lo
+          - /routing ospf instance add disabled=no name=default
+          - /routing ospf instance set 0 router-id={{ router_id }}
+          - /routing ospf area add instance=default name=backbone
+          - /routing ospf interface-template add area=backbone interfaces=ether1 type=ptp
+      vars:
+        router_id: "{{ '1.1.1.1' if ansible_host == '10.0.0.2' else '2.2.2.2' }}"
 
+    - name: Get OSPF topology data
+      community.routeros.command:
+        commands:
+          - /routing ospf neighbor print detail
+      register: ospf_data
+
+    - name: Show OSPF topology data
+      debug:
+        var: ospf_data.stdout_lines
+
+    - name: Get full config
+      community.routeros.command:
+        commands:
+          - /export
+      register: router_config
+
+    - name: Show full config
+      debug:
+        var: router_config.stdout_lines
 ```
 8) Запускаем выполнение плейбука командой ```ansible-playbook -i invetory.yaml main_playbook.yaml```
 
