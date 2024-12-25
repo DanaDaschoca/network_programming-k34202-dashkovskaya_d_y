@@ -1,0 +1,46 @@
+---
+- name: Setting MikroTik
+  hosts: routers
+  gather_facts: false
+  tasks:
+    - name: Change password
+      community.routeros.command:
+        commands:
+          - /user set admin password="4321"
+    - name: Setting NTP
+      community.routeros.command:
+        commands:
+          - /system ntp client set enabled=yes mode=unicast
+          - /system ntp client servers add address=194.190.168.1
+
+    - name: Setting OSPF
+      community.routeros.command:
+        commands:
+          - /interface bridge add name=lo
+          - /ip address add address={{ router_id }} interface=lo
+          - /routing ospf instance add disabled=no name=default
+          - /routing ospf instance set 0 router-id={{ router_id }}
+          - /routing ospf area add instance=default name=backbone
+          - /routing ospf interface-template add area=backbone interfaces=ether1 type=ptp
+      vars:
+        router_id: "{{ '1.1.1.1' if ansible_host == '10.0.0.2' else '2.2.2.2' }}"
+
+    - name: Get OSPF topology data
+      community.routeros.command:
+        commands:
+          - /routing ospf neighbor print detail
+      register: ospf_data
+
+    - name: Show OSPF topology data
+      debug:
+        var: ospf_data.stdout_lines
+
+    - name: Get full config
+      community.routeros.command:
+        commands:
+          - /export
+      register: router_config
+
+    - name: Show full config
+      debug:
+        var: router_config.stdout_lines
