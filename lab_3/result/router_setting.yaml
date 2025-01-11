@@ -1,0 +1,34 @@
+---
+- name: Fetch Info from NetBox
+  hosts: localhost
+  gather_facts: false
+  vars:
+   netbox_url: "http://10.0.2.15:8000"
+   netbox_token: "c2319e8b9a666cc67fa072c6465ebf917679c778"
+  tasks:
+    - name: Fetch info
+      uri:
+        url: "{{ netbox_url }}/api/dcim/devices"
+        headers:
+          Authorization: "Token {{ netbox_token }}"
+        method: GET
+        return_content: yes
+        validate_certs: false
+      register: device_data
+    - name: Get name and ip address
+      set_fact:
+        device_name: "{{ device_data.json.results[0].name }}"
+        netbox_ip_address: "{{ device_data.json.results[0].primary_ip.address }}"
+
+- name: Set name and ip address
+  hosts: chr_host
+  gather_facts: false
+  tasks:
+    - name: Change name
+      community.routeros.command:
+        commands:
+          - /system identity set name={{ hostvars['localhost'].device_name }}
+    - name: Add ip address
+      community.routeros.command:
+        commands:
+          - /ip address add address={{ hostvars['localhost'].netbox_ip_address }} interface=ether1 disabled=no
