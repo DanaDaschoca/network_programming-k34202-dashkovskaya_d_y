@@ -1,0 +1,211 @@
+{
+    "count": 2,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "airflow": null,
+            "asset_tag": null,
+            "cluster": null,
+            "comments": "",
+            "config_context": {},
+            "config_template": null,
+            "console_port_count": 0,
+            "console_server_port_count": 0,
+            "created": "2025-01-11T10:33:11.361116Z",
+            "custom_fields": {},
+            "description": "",
+            "device_bay_count": 0,
+            "device_type": {
+                "description": "",
+                "display": "RouterOS",
+                "id": 1,
+                "manufacturer": {
+                    "description": "",
+                    "display": "MikroTik",
+                    "id": 1,
+                    "name": "MikroTik",
+                    "slug": "mikrotik",
+                    "url": "http://10.0.2.15:8000/api/dcim/manufacturers/1/"
+                },
+                "model": "RouterOS",
+                "slug": "routeros",
+                "url": "http://10.0.2.15:8000/api/dcim/device-types/1/"
+            },
+            "display": "CHR1",
+            "display_url": "http://10.0.2.15:8000/dcim/devices/1/",
+            "face": null,
+            "front_port_count": 0,
+            "id": 1,
+            "interface_count": 1,
+            "inventory_item_count": 0,
+            "last_updated": "2025-01-11T10:35:56.932351Z",
+            "latitude": null,
+            "local_context_data": null,
+            "location": null,
+            "longitude": null,
+            "module_bay_count": 0,
+            "name": "CHR1",
+            "oob_ip": null,
+            "parent_device": null,
+            "platform": null,
+            "position": null,
+            "power_outlet_count": 0,
+            "power_port_count": 0,
+            "primary_ip": {
+                "address": "172.20.10.2/28",
+                "description": "",
+                "display": "172.20.10.2/28",
+                "family": {
+                    "label": "IPv4",
+                    "value": 4
+                },
+                "id": 1,
+                "url": "http://10.0.2.15:8000/api/ipam/ip-addresses/1/"
+            },
+            "primary_ip4": {
+                "address": "172.20.10.2/28",
+                "description": "",
+                "display": "172.20.10.2/28",
+                "family": {
+                    "label": "IPv4",
+                    "value": 4
+                },
+                "id": 1,
+                "url": "http://10.0.2.15:8000/api/ipam/ip-addresses/1/"
+            },
+            "primary_ip6": null,
+            "rack": null,
+            "rear_port_count": 0,
+            "role": {
+                "description": "",
+                "display": "Cloud Hosted Router",
+                "id": 1,
+                "name": "Cloud Hosted Router",
+                "slug": "cloud-hosted-router",
+                "url": "http://10.0.2.15:8000/api/dcim/device-roles/1/"
+            },
+            "serial": "",
+            "site": {
+                "description": "",
+                "display": "daschoca",
+                "id": 1,
+                "name": "daschoca",
+                "slug": "daschoca",
+                "url": "http://10.0.2.15:8000/api/dcim/sites/1/"
+            },
+            "status": {
+                "label": "Active",
+                "value": "active"
+            },
+            "tags": [],
+            "tenant": null,
+            "url": "http://10.0.2.15:8000/api/dcim/devices/1/",
+            "vc_position": null,
+            "vc_priority": null,
+            "virtual_chassis": null
+        },
+        {
+            "airflow": null,
+            "asset_tag": null,
+            "cluster": null,
+            "comments": "",
+            "config_context": {},
+            "config_template": null,
+            "console_port_count": 0,
+            "console_server_port_count": 0,
+            "created": "2025-01-11T10:33:22.663814Z",
+            "custom_fields": {},
+            "description": "",
+            "device_bay_count": 0,
+            "device_type": {
+                "description": "",
+                "display": "RouterOS",
+                "id": 1,
+                "manufacturer": {
+                    "description": "",
+                    "display": "MikroTik",
+                    "id": 1,
+                    "name": "MikroTik",
+                    "slug": "mikrotik",
+                    "url": "http://10.0.2.15:8000/api/dcim/manufacturers/1/"
+                },
+                "model": "RouterOS",
+                "slug": "routeros",
+                "url": "http://10.0.2.15:8000/api/dcim/device-types/1/"
+            },
+            "display": "CHR2",
+            "display_url": "http://10.0.2.15:8000/dcim/devices/2/",
+            "face": null,
+            "front_port_count": 0,
+            "id": 2,
+            "interface_count": 1,
+            "inventory_item_count": 0,
+            "last_updated": "2025-01-11T10:36:39.714982Z",
+            "latitude": null,
+            "local_context_data": null,
+            "location": null,
+            "longitude": null,
+            "module_bay_count": 0,
+            "name": "CHR2",
+            "oob_ip": null,
+            "parent_device": null,
+            "platform": null,
+            "position": null,
+            "power_outlet_count": 0,
+            "power_port_count": 0,
+            "primary_ip": {
+                "address": "172.20.10.5/28",
+                "description": "",
+                "display": "172.20.10.5/28",
+                "family": {
+                    "label": "IPv4",
+                    "value": 4
+                },
+                "id": 2,
+                "url": "http://10.0.2.15:8000/api/ipam/ip-addresses/2/"
+            },
+            "primary_ip4": {
+                "address": "172.20.10.5/28",
+                "description": "",
+                "display": "172.20.10.5/28",
+                "family": {
+                    "label": "IPv4",
+                    "value": 4
+                },
+                "id": 2,
+                "url": "http://10.0.2.15:8000/api/ipam/ip-addresses/2/"
+            },
+            "primary_ip6": null,
+            "rack": null,
+            "rear_port_count": 0,
+            "role": {
+                "description": "",
+                "display": "Cloud Hosted Router",
+                "id": 1,
+                "name": "Cloud Hosted Router",
+                "slug": "cloud-hosted-router",
+                "url": "http://10.0.2.15:8000/api/dcim/device-roles/1/"
+            },
+            "serial": "",
+            "site": {
+                "description": "",
+                "display": "daschoca",
+                "id": 1,
+                "name": "daschoca",
+                "slug": "daschoca",
+                "url": "http://10.0.2.15:8000/api/dcim/sites/1/"
+            },
+            "status": {
+                "label": "Active",
+                "value": "active"
+            },
+            "tags": [],
+            "tenant": null,
+            "url": "http://10.0.2.15:8000/api/dcim/devices/2/",
+            "vc_position": null,
+            "vc_priority": null,
+            "virtual_chassis": null
+        }
+    ]
+}
